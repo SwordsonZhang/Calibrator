@@ -5,10 +5,15 @@ In order to calibrate your camera conveniently, a class will be useful and exten
 
 # Directories
 src     : main source code(modifiable)
+
 build   : compile files after cmake command
+
 bin     : compile files after make command
+
 cmake   : cmake files needed by CMakeLists.txt
+
 include : conserving Calibrator.h and Calibrator.cpp
+
 lib     : conserving library files after cmake
 
 # Files
