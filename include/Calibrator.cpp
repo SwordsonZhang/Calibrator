@@ -152,7 +152,7 @@ void Calibrator::saveImages(int frameNumber, string directory,
 		cv::Mat frame1, cv::Mat frame2)
 {
 	cout << "\033[0;32mContinue capturing pictures\033[0m\n";
-	cout << "\033[0;32mSave \033[0m" << (frameNumber + 1) << " \033[0;32mpicture(s).\033[0m\n";
+	cout << "\033[0;32mSave \033[0m" << (frameNumber + 1) << " \033[0;32mpicture(s).\033[0m\n\n";
 
 	if(flag == FLAG_SINGLE_CAMERA)
 		cv::imwrite(directory + imageNames[frameNumber], frame1);
@@ -532,6 +532,16 @@ string Calibrator::getFilename()
 	return filename;
 }
 
+int Calibrator::getnBoards()
+{
+	return n_boards;
+}
+
+cv::Size Calibrator::getImageSize()
+{
+	return imageSize;
+}
+
 cv::Mat Calibrator::getCameraMatrix1()
 {
 	return cameraMatrix1;
@@ -608,7 +618,18 @@ void Calibrator::setF(cv::Mat F)
 	this->F = F;
 }
 
-
+void Calibrator::setCameraMatrices(cv::Mat M1, cv::Mat D1,
+		cv::Mat M2, cv::Mat D2, cv::Mat R,
+		cv::Mat T, cv::Mat F)
+{
+	cameraMatrix1 = M1;
+	distCoeffs1 = D1;
+	cameraMatrix2 = M2;
+	distCoeffs2 = D2;
+	this->R = R;
+	this->T = T;
+	this->F = F;
+}
 
 
 

@@ -58,6 +58,8 @@ class Calibrator
 		
 		// get elements' values of Calibrator
 		string getFilename();
+		int getnBoards();
+        cv::Size getImageSize();
 		cv::Mat getCameraMatrix1();
 		cv::Mat getDistCoeffs1();
 		cv::Mat getCameraMatrix2();
@@ -75,6 +77,10 @@ class Calibrator
 		void setR(cv::Mat R);
 		void setT(cv::Mat T);
 		void setF(cv::Mat F);
+		void setCameraMatrices(cv::Mat M1, cv::Mat D1, 
+				cv::Mat M2 = cv::Mat(), cv::Mat D2 = cv::Mat(),
+				cv::Mat R = cv::Mat(), cv::Mat T = cv::Mat(), 
+				cv::Mat F = cv::Mat());
 };
 
 #endif
