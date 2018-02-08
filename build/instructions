@@ -1,0 +1,3 @@
+It is empty when you open it.
+But it is created to store makefiles after cmaking CMakeLists.txt.
+Or you can create your own "build" directory.
